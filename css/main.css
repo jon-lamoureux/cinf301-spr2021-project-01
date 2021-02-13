@@ -4,8 +4,12 @@ td {
     width: 100px;
     background-color: rgb(75, 75, 255);
     text-align: center;
-    vertical-align: middle;
     line-height: 100px;
     font-size: 40px;
     font-family: Arial;
+    margin: 3px;
+}
+
+#container {
+  width: 350px;
 }
