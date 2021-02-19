@@ -54,3 +54,9 @@ td:nth-child(9) {
   width: 350px;
   margin: auto;
 }
+
+h1 {
+  color: #fff;
+  font-family: Arial;
+  text-align: center;
+}
