@@ -13,6 +13,7 @@ td {
     font-family: Arial;
     margin: 2px;
     border: 1px solid #ccc;
+    cursor: pointer;
 }
 
 #container {
@@ -24,4 +25,16 @@ h1 {
   color: #fff;
   font-family: Arial;
   text-align: center;
+}
+
+button {
+  width: 200px;
+padding: 10px;
+background-color: rgb(50, 50, 175);
+color: #fff;
+font-weight: bold;
+margin-top: 10px;
+font-size: 15px;
+border-radius: 5px;
+cursor: pointer;
 }

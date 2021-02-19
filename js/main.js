@@ -17,7 +17,6 @@ window.onload = function() {
     function switch_elems(i, j) {
       const table = document.querySelector('table');
       const val1 = table.rows[i].cells[j].innerHTML;
-
       let k = j + 1;
       let numRows = table.rows.length; // not used, but this gets num rows
       if (k > table.rows[i].cells.length - 1) {
