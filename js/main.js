@@ -1,7 +1,9 @@
 window.onload = function() {
+    var initial = 0;
     const table = document.querySelector('table');
     const rows = document.querySelectorAll('tr');
     const rowsArray = Array.from(rows);
+    const solved = "Congratulations, you solved the puzzle!";
 
     table.addEventListener('click', (event) => {
       const rowIndex = rowsArray.findIndex(row => row.contains(event.target));
@@ -9,6 +11,7 @@ window.onload = function() {
       const columnIndex = columns.findIndex(column => column == event.target);
       console.log(rowIndex, columnIndex)
       switch_elems(rowIndex, columnIndex);
+      initial = 1;
     })
 
     function switch_elems(i, j) {
@@ -24,9 +27,8 @@ window.onload = function() {
 
     table.rows[i].cells[j].innerHTML = val2.toString();
     table.rows[i].cells[k].innerHTML = val1.toString();
+    if (Boolean(initial) == false) {
+      alert(solved);
+    }
   }
-
-    const solved = "Congratulations, you solved the puzzle!";
-
-    alert(solved);
 }
