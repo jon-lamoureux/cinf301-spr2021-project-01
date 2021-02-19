@@ -11,43 +11,8 @@ td {
     line-height: 100px;
     font-size: 40px;
     font-family: Arial;
-    margin: 3px;
-}
-
-td:nth-child(1) {
-    border-left: 1px solid #fff;
-    border-top: 1px solid #fff;
-}
-
-td:nth-child(2) {
-    border-top: 1px solid #fff;
-}
-
-td:nth-child(3) {
-    border-right: 1px solid #fff;
-    border-top: 1px solid #fff;
-}
-
-td:nth-child(4) {
-    border-left: 1px solid #fff;
-}
-
-td:nth-child(6) {
-    border-right: 1px solid #fff;
-}
-
-td:nth-child(7) {
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-}
-
-td:nth-child(8) {
-    border-bottom: 1px solid #fff;
-}
-
-td:nth-child(9) {
-    border-right: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    margin: 2px;
+    border: 1px solid #ccc;
 }
 
 #container {
