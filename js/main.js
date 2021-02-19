@@ -10,10 +10,11 @@ window.onload = function() {
       const columns = Array.from(rowsArray[rowIndex].querySelectorAll('td'));
       const columnIndex = columns.findIndex(column => column == event.target);
       console.log(rowIndex, columnIndex);
+      console.log(columns[2]);
       if (event.target.innerHTML != "") {
-        console.log(event.target.id);
         switch_elems(rowIndex, columnIndex);
       }
+        console.log(event.target.id);
       initial = 1;
     })
 
@@ -27,10 +28,34 @@ window.onload = function() {
       if (k > table.rows[i].cells.length - 1) {
           k = 0;
       }
-      const val2 = table.rows[i].cells[k].innerHTML;
-
-      table.rows[i].cells[j].innerHTML = val2.toString();
-      table.rows[i].cells[k].innerHTML = val1.toString();
+      // Check if blank element is above
+      if (i > 0) {
+        if (table.rows[i - 1].cells[j].innerHTML == "") {
+          table.rows[i].cells[j].innerHTML = "";
+          table.rows[i - 1].cells[j].innerHTML = val1.toString();
+        }
+      }
+      // Check if blank element is below
+      if (i < 2) {
+        if (table.rows[i + 1].cells[j].innerHTML == "") {
+          table.rows[i].cells[j].innerHTML = "";
+          table.rows[i + 1].cells[j].innerHTML = val1.toString();
+        }
+      }
+      // Check if blank element is to the right
+      if (j < 2) {
+        if (table.rows[i].cells[j + 1].innerHTML == "") {
+          table.rows[i].cells[j].innerHTML = "";
+          table.rows[i].cells[j + 1].innerHTML = val1.toString();
+        }
+      }
+      // Check if blank element is to the left
+      if (j > 0) {
+        if (table.rows[i].cells[j - 1].innerHTML == "") {
+          table.rows[i].cells[j].innerHTML = "";
+          table.rows[i].cells[j - 1].innerHTML = val1.toString();
+        }
+      }
       if (Boolean(initial) == false) {
         alert(solved);
       }
