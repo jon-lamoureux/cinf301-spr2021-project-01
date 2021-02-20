@@ -1,5 +1,6 @@
 body {
-  background-color: rgb(30, 30, 30)
+  background-color: rgb(30, 30, 30);
+  overflow: hidden;
 }
 
 td {
@@ -46,4 +47,9 @@ cursor: pointer;
   font-weight: bold;
   font-family: Arial;
   display: none;
+}
+
+.text-container {
+  height: 40px;
+  margin: 10px 0;
 }

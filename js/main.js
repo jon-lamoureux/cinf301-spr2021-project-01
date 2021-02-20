@@ -80,7 +80,7 @@ window.onload = function() {
     // Shuffle the puzzle
     document.getElementById("shuffle").addEventListener("click", shufflePuzzle);
     function shufflePuzzle() {
-      var iterations = 100;
+      var iterations = 250;
       // Reset the puzzle to its answer state...weirdly.
       for (var i = 0; i < answer.length; i++) {
         k = i + 1;
