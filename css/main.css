@@ -38,3 +38,12 @@ font-size: 15px;
 border-radius: 5px;
 cursor: pointer;
 }
+
+#condition {
+  text-align: center;
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Arial;
+  display: none;
+}

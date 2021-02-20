@@ -53,7 +53,6 @@ window.onload = function() {
     }
     function checkSolved() {
       // Check if function is solved
-
       // Select all TD elements
       var cols = document.querySelectorAll('td');
       var finArray = Array.from(cols);
@@ -73,13 +72,15 @@ window.onload = function() {
         }
       }
       if (solved == 1) {
-        alert("Congratulations, you solved the puzzle!");
+        document.getElementById("condition").style.display = "block";
+      } else {
+        document.getElementById("condition").style.display = "none";
       }
     }
     // Shuffle the puzzle
     document.getElementById("shuffle").addEventListener("click", shufflePuzzle);
     function shufflePuzzle() {
-      var iterations = 50;
+      var iterations = 100;
       // Reset the puzzle to its answer state...weirdly.
       for (var i = 0; i < answer.length; i++) {
         k = i + 1;
@@ -93,10 +94,15 @@ window.onload = function() {
           document.querySelector("tr:nth-child(3) td:nth-child(" + k + ")").innerHTML = answer[i];
         }
       }
-
-      // Select the blank space
+      // Technically random selection -- but the switch_elens function will not allow for invalid movements.
       for(var i = 0; i < iterations; i++) {
         switch_elems(Math.floor(Math.random() * 3), Math.floor(Math.random() * 3));
       }
+
+      // prevent the shuffle from ever producing the answer
+      if (document.querySelector("tr:nth-child(2) td:nth-child(2)").innerHTML == "") {
+        shufflePuzzle();
+      }
+      document.getElementById("condition").style.display = "none";
     }
 }
